@@ -107,13 +107,13 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    background-color: #F48646;
+    background-color: var(--color-primary);
     color: white;
     border: none;
     border-radius: 30px;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(244, 134, 70, 0.3);
+    box-shadow: 0 4px 10px rgba(213, 0, 109, 0.3);
     transition: background-color 0.2s;
 }
 
@@ -257,9 +257,9 @@
 }
 
 .pagination-btn.active {
-    background-color: #F48646;
+    background-color: var(--color-primary);
     color: white;
-    border-color: #F48646;
+    border-color: var(--color-primary);
 }
 
 .pagination-btn:disabled {

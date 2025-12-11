@@ -349,7 +349,7 @@
 }
 
 .gift-discount-badge {
-    background-color: #E33E38;
+    background-color: var(--color-primary);
     /* Natura Red */
     color: white;
     font-size: 0.75rem;
@@ -418,14 +418,14 @@
 
 .btn-promo {
     padding: 1rem 2.5rem;
-    background-color: #F48646;
+    background-color: var(--color-primary);
     color: white;
     border: none;
     border-radius: 30px;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(244, 134, 70, 0.3);
+    box-shadow: 0 4px 10px rgba(213, 0, 109, 0.3);
     transition: transform 0.2s;
 }
 

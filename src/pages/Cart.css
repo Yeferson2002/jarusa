@@ -152,7 +152,7 @@
 }
 
 .gift-option {
-    background-color: #fff0e6;
+    background-color: var(--color-secondary);
     /* Light orange/pink */
     border: 1px solid #ffdcc4;
     border-radius: 8px;
@@ -188,7 +188,7 @@
     align-items: flex-start;
     margin-top: 1rem;
     padding: 1rem;
-    border: 1px solid #f48646;
+    border: 1px solid var(--color-primary);
     border-radius: 8px;
     background-color: #fff;
 }
@@ -211,7 +211,7 @@
 .btn-login {
     width: 100%;
     padding: 1rem;
-    background-color: #f48646;
+    background-color: var(--color-primary);
     color: white;
     border: none;
     border-radius: 30px;
@@ -222,7 +222,7 @@
 }
 
 .btn-login:hover {
-    background-color: #e07535;
+    background-color: var(--color-primary-hover);
 }
 
 .order-summary {
@@ -269,7 +269,7 @@
 .btn-checkout {
     width: 100%;
     padding: 1rem;
-    background-color: #f48646;
+    background-color: var(--color-primary);
     color: white;
     border: none;
     border-radius: 30px;
@@ -280,7 +280,7 @@
 }
 
 .btn-checkout:hover {
-    background-color: #e07535;
+    background-color: var(--color-primary-hover);
 }
 
 .btn-continue {
@@ -347,7 +347,7 @@
 }
 
 .gift-option {
-    background-color: #fff0e6;
+    background-color: var(--color-secondary);
     /* Light orange/pink */
     border: 1px solid #ffdcc4;
     border-radius: 8px;
@@ -383,7 +383,7 @@
     align-items: flex-start;
     margin-top: 1rem;
     padding: 1rem;
-    border: 1px solid #f48646;
+    border: 1px solid var(--color-primary);
     border-radius: 8px;
     background-color: #fff;
 }
@@ -406,7 +406,7 @@
 .btn-login {
     width: 100%;
     padding: 1rem;
-    background-color: #f48646;
+    background-color: var(--color-primary);
     color: white;
     border: none;
     border-radius: 30px;
@@ -417,7 +417,7 @@
 }
 
 .btn-login:hover {
-    background-color: #e07535;
+    background-color: var(--color-primary-hover);
 }
 
 .order-summary {
@@ -464,7 +464,7 @@
 .btn-checkout {
     width: 100%;
     padding: 1rem;
-    background-color: #f48646;
+    background-color: var(--color-primary);
     color: white;
     border: none;
     border-radius: 30px;
@@ -475,7 +475,7 @@
 }
 
 .btn-checkout:hover {
-    background-color: #e07535;
+    background-color: var(--color-primary-hover);
 }
 
 .btn-continue {
