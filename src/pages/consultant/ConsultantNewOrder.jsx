@@ -57,13 +57,13 @@ const ConsultantNewOrder = () => {
                         alignItems: 'center',
                         gap: '0.5rem',
                         padding: '0.75rem 1.5rem',
-                        backgroundColor: '#F48646',
+                        backgroundColor: 'var(--color-primary)',
                         color: 'white',
                         border: 'none',
                         borderRadius: '8px',
                         fontWeight: '600',
                         cursor: 'pointer',
-                        boxShadow: '0 2px 5px rgba(244, 134, 70, 0.3)'
+                        boxShadow: '0 2px 5px rgba(255, 129, 202, 0.3)'
                     }}
                 >
                     <ShoppingCart size={20} />
@@ -173,9 +173,9 @@ const ConsultantNewOrder = () => {
                                         onClick={() => handleAddToCart(product)}
                                         style={{
                                             padding: '0.5rem',
-                                            backgroundColor: '#fff7ed',
-                                            color: '#F48646',
-                                            border: '1px solid #F48646',
+                                            backgroundColor: 'var(--color-secondary)',
+                                            color: 'var(--color-primary)',
+                                            border: '1px solid var(--color-primary)',
                                             borderRadius: '8px',
                                             cursor: 'pointer',
                                             transition: 'all 0.2s',
@@ -208,10 +208,10 @@ const ConsultantNewOrder = () => {
                         width: '60px',
                         height: '60px',
                         borderRadius: '50%',
-                        backgroundColor: '#F48646',
+                        backgroundColor: 'var(--color-primary)',
                         color: 'white',
                         border: 'none',
-                        boxShadow: '0 4px 12px rgba(244, 134, 70, 0.4)',
+                        boxShadow: '0 4px 12px rgba(255, 129, 202, 0.4)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',

@@ -95,7 +95,7 @@ const ClientOrdersModal = ({ isOpen, onClose, client }) => {
                             padding: '0.75rem',
                             borderRadius: '12px',
                             border: 'none',
-                            background: 'linear-gradient(135deg, #F48646 0%, #F26E21 100%)',
+                            background: 'linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%)',
                             color: 'white',
                             fontWeight: '600',
                             cursor: 'pointer',
@@ -103,7 +103,7 @@ const ClientOrdersModal = ({ isOpen, onClose, client }) => {
                             alignItems: 'center',
                             justifyContent: 'center',
                             gap: '0.5rem',
-                            boxShadow: '0 4px 12px rgba(244, 134, 70, 0.3)'
+                            boxShadow: '0 4px 12px rgba(255, 129, 202, 0.3)'
                         }}
                     >
                         <Bot size={20} />

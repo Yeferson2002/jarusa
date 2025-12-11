@@ -111,7 +111,7 @@ const ConsultantOrders = () => {
                             >
                                 <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', flex: 1 }}>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                                        <div style={{ padding: '0.5rem', backgroundColor: '#fff7ed', borderRadius: '8px', color: '#F48646' }}>
+                                        <div style={{ padding: '0.5rem', backgroundColor: 'var(--color-secondary)', borderRadius: '8px', color: 'var(--color-primary)' }}>
                                             <Package size={24} />
                                         </div>
                                         <div>

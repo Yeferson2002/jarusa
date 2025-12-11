@@ -110,7 +110,7 @@ const ConsultantCatalog = () => {
                                     borderRadius: '20px',
                                     fontSize: '0.85rem',
                                     fontWeight: '600',
-                                    color: '#F48646'
+                                    color: 'var(--color-primary)'
                                 }}>
                                     S/ {rec.Product.price}
                                 </div>
@@ -124,11 +124,11 @@ const ConsultantCatalog = () => {
 
                                 {rec.reason && (
                                     <div style={{
-                                        backgroundColor: '#fff7ed',
+                                        backgroundColor: 'var(--color-secondary)',
                                         padding: '0.75rem',
                                         borderRadius: '8px',
                                         fontSize: '0.85rem',
-                                        color: '#9a3412',
+                                        color: 'var(--color-text-main)',
                                         marginBottom: '1.5rem',
                                         flex: 1
                                     }}>

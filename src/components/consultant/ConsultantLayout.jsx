@@ -37,7 +37,7 @@ const ConsultantLayout = () => {
             <aside className={`admin-sidebar ${isSidebarOpen ? 'open' : ''}`}>
                 <div style={{ padding: '2rem', borderBottom: '1px solid #f0f0f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div style={{ fontSize: '1.5rem', fontFamily: 'serif', color: '#333' }}>
-                        jarusa <span style={{ fontSize: '0.8rem', color: '#F48646', fontFamily: 'sans-serif', fontWeight: 'bold' }}>CONSULTORA</span>
+                        jarusa <span style={{ fontSize: '0.8rem', color: 'var(--color-primary)', fontFamily: 'sans-serif', fontWeight: 'bold' }}>CONSULTORA</span>
                     </div>
                     <button
                         onClick={closeSidebar}
@@ -55,17 +55,17 @@ const ConsultantLayout = () => {
 
                 <div style={{ padding: '1.5rem 1.5rem 0.5rem' }}>
                     <div style={{
-                        backgroundColor: '#fff0e6',
+                        backgroundColor: 'var(--color-secondary)',
                         padding: '1rem',
                         borderRadius: '12px',
                         marginBottom: '1rem'
                     }}>
                         <div style={{ fontSize: '0.85rem', color: '#666', marginBottom: '0.25rem' }}>Nivel Actual</div>
-                        <div style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#F48646', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <div style={{ fontSize: '1.1rem', fontWeight: 'bold', color: 'var(--color-primary)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                             {user?.consultantLevel || 'Bronce'} <span style={{ fontSize: '0.8rem', fontWeight: 'normal', color: '#333' }}>★</span>
                         </div>
                         <div style={{ marginTop: '0.5rem', height: '6px', backgroundColor: '#e5e7eb', borderRadius: '3px', overflow: 'hidden' }}>
-                            <div style={{ width: '75%', height: '100%', backgroundColor: '#F48646' }}></div>
+                            <div style={{ width: '75%', height: '100%', backgroundColor: 'var(--color-primary)' }}></div>
                         </div>
                         <div style={{ fontSize: '0.75rem', color: '#666', marginTop: '0.25rem' }}>Faltan 250 pts para Diamante</div>
                     </div>
@@ -81,8 +81,8 @@ const ConsultantLayout = () => {
                                 padding: '0.75rem 1rem',
                                 borderRadius: '8px',
                                 textDecoration: 'none',
-                                color: isActive('/consultant/dashboard') ? '#F48646' : '#666',
-                                backgroundColor: isActive('/consultant/dashboard') ? '#fff0e6' : 'transparent',
+                                color: isActive('/consultant/dashboard') ? 'var(--color-primary)' : '#666',
+                                backgroundColor: isActive('/consultant/dashboard') ? 'var(--color-secondary)' : 'transparent',
                                 fontWeight: isActive('/consultant/dashboard') ? '600' : '400',
                                 transition: 'all 0.2s'
                             }}>
@@ -98,8 +98,8 @@ const ConsultantLayout = () => {
                                 padding: '0.75rem 1rem',
                                 borderRadius: '8px',
                                 textDecoration: 'none',
-                                color: isActive('/consultant/new-order') ? '#F48646' : '#666',
-                                backgroundColor: isActive('/consultant/new-order') ? '#fff0e6' : 'transparent',
+                                color: isActive('/consultant/new-order') ? 'var(--color-primary)' : '#666',
+                                backgroundColor: isActive('/consultant/new-order') ? 'var(--color-secondary)' : 'transparent',
                                 fontWeight: isActive('/consultant/new-order') ? '600' : '400',
                                 transition: 'all 0.2s'
                             }}>
@@ -115,8 +115,8 @@ const ConsultantLayout = () => {
                                 padding: '0.75rem 1rem',
                                 borderRadius: '8px',
                                 textDecoration: 'none',
-                                color: isActive('/consultant/orders') ? '#F48646' : '#666',
-                                backgroundColor: isActive('/consultant/orders') ? '#fff0e6' : 'transparent',
+                                color: isActive('/consultant/orders') ? 'var(--color-primary)' : '#666',
+                                backgroundColor: isActive('/consultant/orders') ? 'var(--color-secondary)' : 'transparent',
                                 fontWeight: isActive('/consultant/orders') ? '600' : '400',
                                 transition: 'all 0.2s'
                             }}>
@@ -132,8 +132,8 @@ const ConsultantLayout = () => {
                                 padding: '0.75rem 1rem',
                                 borderRadius: '8px',
                                 textDecoration: 'none',
-                                color: isActive('/consultant/customers') ? '#F48646' : '#666',
-                                backgroundColor: isActive('/consultant/customers') ? '#fff0e6' : 'transparent',
+                                color: isActive('/consultant/customers') ? 'var(--color-primary)' : '#666',
+                                backgroundColor: isActive('/consultant/customers') ? 'var(--color-secondary)' : 'transparent',
                                 fontWeight: isActive('/consultant/customers') ? '600' : '400',
                                 transition: 'all 0.2s'
                             }}>
@@ -149,8 +149,8 @@ const ConsultantLayout = () => {
                                 padding: '0.75rem 1rem',
                                 borderRadius: '8px',
                                 textDecoration: 'none',
-                                color: isActive('/consultant/catalog') ? '#F48646' : '#666',
-                                backgroundColor: isActive('/consultant/catalog') ? '#fff0e6' : 'transparent',
+                                color: isActive('/consultant/catalog') ? 'var(--color-primary)' : '#666',
+                                backgroundColor: isActive('/consultant/catalog') ? 'var(--color-secondary)' : 'transparent',
                                 fontWeight: isActive('/consultant/catalog') ? '600' : '400',
                                 transition: 'all 0.2s'
                             }}>
@@ -208,7 +208,7 @@ const ConsultantLayout = () => {
                             width: '40px',
                             height: '40px',
                             borderRadius: '50%',
-                            backgroundColor: '#F48646',
+                            backgroundColor: 'var(--color-primary)',
                             color: 'white',
                             display: 'flex',
                             alignItems: 'center',
