@@ -254,7 +254,7 @@ const AdminOrders = () => {
                                     padding: '0.5rem 1rem',
                                     border: '1px solid #e5e7eb',
                                     borderRadius: '6px',
-                                    background: currentPage === i + 1 ? '#F48646' : 'white',
+                                    background: currentPage === i + 1 ? 'var(--color-primary)' : 'white',
                                     color: currentPage === i + 1 ? 'white' : '#374151',
                                     cursor: 'pointer'
                                 }}

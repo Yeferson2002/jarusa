@@ -18,7 +18,7 @@ const AdminProducts = () => {
     const fetchProducts = async () => {
         setLoading(true);
         try {
-            const response = await fetch('/api/products');
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products`);
             const data = await response.json();
             console.log('Fetched products:', data);
             if (Array.isArray(data)) {
@@ -48,7 +48,7 @@ const AdminProducts = () => {
         if (!productToDelete) return;
 
         try {
-            const response = await fetch(`/api/products/${productToDelete.id}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products/${productToDelete.id}`, {
                 method: 'DELETE'
             });
 
@@ -132,13 +132,13 @@ const AdminProducts = () => {
                         alignItems: 'center',
                         gap: '0.5rem',
                         padding: '0.75rem 1.5rem',
-                        backgroundColor: '#F48646',
+                        backgroundColor: 'var(--color-primary)',
                         border: 'none',
                         borderRadius: '30px',
                         color: 'white',
                         cursor: 'pointer',
                         fontWeight: 'bold',
-                        boxShadow: '0 4px 10px rgba(244, 134, 70, 0.3)'
+                        boxShadow: '0 4px 10px rgba(213, 0, 109, 0.3)'
                     }}>
                         <Plus size={20} />
                         Nuevo Producto
@@ -346,7 +346,7 @@ const AdminProducts = () => {
                                     padding: '0.5rem 1rem',
                                     border: '1px solid #e5e7eb',
                                     borderRadius: '6px',
-                                    background: currentPage === i + 1 ? '#F48646' : 'white',
+                                    background: currentPage === i + 1 ? 'var(--color-primary)' : 'white',
                                     color: currentPage === i + 1 ? 'white' : '#374151',
                                     cursor: 'pointer'
                                 }}
