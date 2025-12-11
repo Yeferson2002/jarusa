@@ -20,7 +20,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 const corsOptions = {
-    origin: ['http://localhost:5173', 'https://natura-chi.vercel.app', 'http://localhost:3000'],
+    origin: ['http://localhost:5173', 'http://localhost:3000', 'https://jarusa.vercel.app'],
     optionsSuccessStatus: 200,
     credentials: true
 };
