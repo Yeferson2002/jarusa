@@ -15,7 +15,7 @@ const ConsultantLayout = () => {
     const [user, setUser] = useState(null);
 
     React.useEffect(() => {
-        const storedUser = sessionStorage.getItem('userInfo');
+        const storedUser = localStorage.getItem('userInfo');
         if (storedUser) {
             setUser(JSON.parse(storedUser));
         }

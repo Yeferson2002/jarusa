@@ -16,7 +16,13 @@ const ClientOrdersModal = ({ isOpen, onClose, client }) => {
     const fetchOrders = async () => {
         setLoading(true);
         try {
-            const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
+            const userInfoString = localStorage.getItem('userInfo');
+            if (!userInfoString) {
+                console.error('No user info found in localStorage');
+                setLoading(false);
+                return;
+            }
+            const userInfo = JSON.parse(userInfoString);
             const config = {
                 headers: {
                     Authorization: `Bearer ${userInfo.token}`,
