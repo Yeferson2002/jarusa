@@ -79,12 +79,12 @@ const ConsultantDashboard = () => {
                 padding: '2rem',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
                 marginBottom: '2rem',
-                backgroundImage: 'linear-gradient(to right, #fff, #fff0e6)'
+                backgroundImage: 'linear-gradient(to right, #fff, var(--color-secondary))'
             }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
                     <div>
-                        <h3 style={{ margin: 0, fontSize: '1.25rem', color: '#1f2937' }}>Progreso del Ciclo 12</h3>
-                        <p style={{ margin: '0.5rem 0 0', color: '#666' }}>Te faltan <strong style={{ color: '#F48646' }}>{250} puntos</strong> para subir a nivel Diamante</p>
+                        <h3 style={{ margin: 0, fontSize: '1.25rem', color: '#1f2937', fontFamily: 'serif' }}>Progreso del Ciclo 12</h3>
+                        <p style={{ margin: '0.5rem 0 0', color: '#666' }}>Te faltan <strong style={{ color: 'var(--color-primary)' }}>{250} puntos</strong> para subir a nivel Diamante</p>
                     </div>
                     <div style={{
                         backgroundColor: 'white',
@@ -95,8 +95,9 @@ const ConsultantDashboard = () => {
                         alignItems: 'center',
                         gap: '0.5rem',
                         fontSize: '0.9rem',
+                        fontSize: '0.9rem',
                         fontWeight: '500',
-                        color: '#F48646'
+                        color: 'var(--color-primary)'
                     }}>
                         <Calendar size={16} />
                         Cierra el 05 Dic
@@ -110,7 +111,7 @@ const ConsultantDashboard = () => {
                         top: 0,
                         height: '100%',
                         width: '75%', // Dynamic width based on points could be implemented here
-                        backgroundColor: '#F48646',
+                        backgroundColor: 'var(--color-primary)',
                         borderRadius: '6px'
                     }}></div>
                 </div>
@@ -127,7 +128,7 @@ const ConsultantDashboard = () => {
                 <button
                     onClick={() => navigate('/consultant/new-order')}
                     style={{
-                        backgroundColor: '#F48646',
+                        backgroundColor: 'var(--color-primary)',
                         color: 'white',
                         border: 'none',
                         borderRadius: '16px',
@@ -137,7 +138,7 @@ const ConsultantDashboard = () => {
                         alignItems: 'center',
                         gap: '1rem',
                         cursor: 'pointer',
-                        boxShadow: '0 4px 10px rgba(244, 134, 70, 0.3)',
+                        boxShadow: '0 4px 10px rgba(255, 129, 202, 0.3)',
                         transition: 'transform 0.2s'
                     }}
                 >
@@ -192,7 +193,7 @@ const ConsultantDashboard = () => {
                 <div style={{ backgroundColor: 'white', borderRadius: '16px', padding: '1.5rem', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                         <h3 style={{ margin: 0, fontSize: '1.1rem', color: '#1f2937' }}>Pedidos Recientes</h3>
-                        <Link to="/consultant/orders" style={{ color: '#F48646', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Ver todos</Link>
+                        <Link to="/consultant/orders" style={{ color: 'var(--color-primary)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Ver todos</Link>
                     </div>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -230,8 +231,8 @@ const ConsultantDashboard = () => {
                 {/* Exclusive Promotions */}
                 <div style={{ backgroundColor: 'white', borderRadius: '16px', padding: '1.5rem', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-                        <h3 style={{ margin: 0, fontSize: '1.1rem', color: '#1f2937' }}>Promociones Exclusivas</h3>
-                        <Star size={20} color="#F48646" fill="#F48646" />
+                        <h3 style={{ margin: 0, fontSize: '1.1rem', color: '#1f2937', fontFamily: 'serif' }}>Promociones Exclusivas</h3>
+                        <Star size={20} color="var(--color-primary)" fill="var(--color-primary)" />
                     </div>
 
                     <div style={{
@@ -255,8 +256,8 @@ const ConsultantDashboard = () => {
                         width: '100%',
                         padding: '0.75rem',
                         backgroundColor: 'white',
-                        border: '1px solid #F48646',
-                        color: '#F48646',
+                        border: '1px solid var(--color-primary)',
+                        color: 'var(--color-primary)',
                         borderRadius: '8px',
                         fontWeight: '600',
                         cursor: 'pointer',
