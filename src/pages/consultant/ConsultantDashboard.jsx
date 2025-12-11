@@ -13,28 +13,34 @@ const ConsultantDashboard = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const storedUser = JSON.parse(sessionStorage.getItem('userInfo'));
-                if (storedUser) {
-                    setUser(storedUser);
+                const storedUserString = localStorage.getItem('userInfo');
+                if (storedUserString) {
+                    const storedUser = JSON.parse(storedUserString);
+                    if (storedUser && storedUser.token) {
+                        setUser(storedUser);
 
-                    // Fetch orders
-                    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/orders/myorders`, {
-                        headers: {
-                            Authorization: `Bearer ${storedUser.token}`,
-                        },
-                    });
+                        // Fetch orders
+                        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/orders/myorders`, {
+                            headers: {
+                                Authorization: `Bearer ${storedUser.token}`,
+                            },
+                        });
 
-                    if (response.ok) {
-                        const data = await response.json();
-                        setOrders(data);
+                        if (response.ok) {
+                            const data = await response.json();
+                            setOrders(data);
 
-                        // Calculate cycle sales (sum of all orders for now)
-                        const total = data.reduce((acc, order) => acc + parseFloat(order.totalPrice), 0);
-                        setCycleSales(total);
+                            // Calculate cycle sales (sum of all orders for now)
+                            const total = data.reduce((acc, order) => acc + parseFloat(order.totalPrice), 0);
+                            setCycleSales(total);
 
-                        // Calculate estimated earnings (30% commission)
-                        setEarnings(total * 0.30);
+                            // Calculate estimated earnings (30% commission)
+                            setEarnings(total * 0.30);
+                        }
                     }
+                } else {
+                    console.warn("No user info found, redirection might be needed.");
+                    navigate('/professional-login');
                 }
             } catch (error) {
                 console.error('Error fetching dashboard data:', error);
