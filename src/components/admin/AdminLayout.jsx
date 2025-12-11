@@ -23,7 +23,7 @@ const AdminLayout = () => {
             <aside className={`admin-sidebar ${isSidebarOpen ? 'open' : ''}`}>
                 <div style={{ padding: '2rem', borderBottom: '1px solid #f0f0f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div style={{ fontSize: '1.5rem', fontFamily: 'serif', color: '#333' }}>
-                        jarusa <span style={{ fontSize: '0.8rem', color: '#F48646', fontFamily: 'sans-serif', fontWeight: 'bold' }}>ADMIN</span>
+                        jarusa <span style={{ fontSize: '0.8rem', color: 'var(--color-primary)', fontFamily: 'sans-serif', fontWeight: 'bold' }}>ADMIN</span>
                     </div>
                     <button
                         onClick={closeSidebar}
@@ -49,7 +49,7 @@ const AdminLayout = () => {
                                 padding: '0.75rem 1rem',
                                 borderRadius: '8px',
                                 textDecoration: 'none',
-                                color: isActive('/admin/dashboard') ? '#F48646' : '#666',
+                                color: isActive('/admin/dashboard') ? 'var(--color-primary)' : '#666',
                                 backgroundColor: isActive('/admin/dashboard') ? '#fff0e6' : 'transparent',
                                 fontWeight: isActive('/admin/dashboard') ? '600' : '400',
                                 transition: 'all 0.2s'
@@ -66,7 +66,7 @@ const AdminLayout = () => {
                                 padding: '0.75rem 1rem',
                                 borderRadius: '8px',
                                 textDecoration: 'none',
-                                color: isActive('/admin/products') ? '#F48646' : '#666',
+                                color: isActive('/admin/products') ? 'var(--color-primary)' : '#666',
                                 backgroundColor: isActive('/admin/products') ? '#fff0e6' : 'transparent',
                                 fontWeight: isActive('/admin/products') ? '600' : '400',
                                 transition: 'all 0.2s'
@@ -83,7 +83,7 @@ const AdminLayout = () => {
                                 padding: '0.75rem 1rem',
                                 borderRadius: '8px',
                                 textDecoration: 'none',
-                                color: isActive('/admin/consultants') ? '#F48646' : '#666',
+                                color: isActive('/admin/consultants') ? 'var(--color-primary)' : '#666',
                                 backgroundColor: isActive('/admin/consultants') ? '#fff0e6' : 'transparent',
                                 fontWeight: isActive('/admin/consultants') ? '600' : '400',
                                 transition: 'all 0.2s'
@@ -100,7 +100,7 @@ const AdminLayout = () => {
                                 padding: '0.75rem 1rem',
                                 borderRadius: '8px',
                                 textDecoration: 'none',
-                                color: isActive('/admin/orders') ? '#F48646' : '#666',
+                                color: isActive('/admin/orders') ? 'var(--color-primary)' : '#666',
                                 backgroundColor: isActive('/admin/orders') ? '#fff0e6' : 'transparent',
                                 fontWeight: isActive('/admin/orders') ? '600' : '400',
                                 transition: 'all 0.2s'
@@ -117,7 +117,7 @@ const AdminLayout = () => {
                                 padding: '0.75rem 1rem',
                                 borderRadius: '8px',
                                 textDecoration: 'none',
-                                color: isActive('/admin/clients') ? '#F48646' : '#666',
+                                color: isActive('/admin/clients') ? 'var(--color-primary)' : '#666',
                                 backgroundColor: isActive('/admin/clients') ? '#fff0e6' : 'transparent',
                                 fontWeight: isActive('/admin/clients') ? '600' : '400',
                                 transition: 'all 0.2s'
@@ -134,7 +134,7 @@ const AdminLayout = () => {
                                 padding: '0.75rem 1rem',
                                 borderRadius: '8px',
                                 textDecoration: 'none',
-                                color: isActive('/admin/settings') ? '#F48646' : '#666',
+                                color: isActive('/admin/settings') ? 'var(--color-primary)' : '#666',
                                 backgroundColor: isActive('/admin/settings') ? '#fff0e6' : 'transparent',
                                 fontWeight: isActive('/admin/settings') ? '600' : '400',
                                 transition: 'all 0.2s'
@@ -193,7 +193,7 @@ const AdminLayout = () => {
                             width: '40px',
                             height: '40px',
                             borderRadius: '50%',
-                            backgroundColor: '#F48646',
+                            backgroundColor: 'var(--color-primary)',
                             color: 'white',
                             display: 'flex',
                             alignItems: 'center',
