@@ -14,7 +14,7 @@ const LoginProfessional = () => {
             const isEmail = code.includes('@');
             const payload = isEmail ? { email: code, password } : { dni: code, password };
 
-            const response = await fetch('/api/auth/login', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
