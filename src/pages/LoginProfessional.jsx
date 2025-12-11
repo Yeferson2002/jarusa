@@ -14,8 +14,7 @@ const LoginProfessional = () => {
             const isEmail = code.includes('@');
             const payload = isEmail ? { email: code, password } : { dni: code, password };
 
-            const baseUrl = import.meta.env.VITE_API_URL || '';
-            const response = await fetch(`${baseUrl}/api/auth/login`, {
+            const response = await fetch('/api/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -86,7 +85,7 @@ const LoginProfessional = () => {
                 </Link>
                 <Link to="/" style={{ textDecoration: 'none' }}>
                     <div style={{ fontSize: '1.8rem', fontWeight: '400', color: 'var(--color-text-main)', letterSpacing: '-0.5px', fontFamily: 'serif' }}>
-                        Jarusa
+                        jarusa
                     </div>
                 </Link>
             </div>
@@ -99,13 +98,13 @@ const LoginProfessional = () => {
                 width: '100%',
                 maxWidth: '450px',
                 textAlign: 'center',
-                borderTop: '4px solid #F48646' // Accent border for professional look
+                borderTop: '4px solid var(--color-primary)' // Accent border for professional look
             }}>
                 <div style={{
                     display: 'flex',
                     justifyContent: 'center',
                     marginBottom: '1rem',
-                    color: '#F48646'
+                    color: 'var(--color-primary)'
                 }}>
                     <Briefcase size={32} />
                 </div>
@@ -142,7 +141,7 @@ const LoginProfessional = () => {
                                     outline: 'none',
                                     transition: 'border-color 0.2s'
                                 }}
-                                onFocus={(e) => e.target.style.borderColor = '#F48646'}
+                                onFocus={(e) => e.target.style.borderColor = 'var(--color-primary)'}
                                 onBlur={(e) => e.target.style.borderColor = '#ddd'}
                                 required
                             />
@@ -169,7 +168,7 @@ const LoginProfessional = () => {
                                     outline: 'none',
                                     transition: 'border-color 0.2s'
                                 }}
-                                onFocus={(e) => e.target.style.borderColor = '#F48646'}
+                                onFocus={(e) => e.target.style.borderColor = 'var(--color-primary)'}
                                 onBlur={(e) => e.target.style.borderColor = '#ddd'}
                                 required
                             />
@@ -194,7 +193,7 @@ const LoginProfessional = () => {
                             </button>
                         </div>
                         <div style={{ textAlign: 'right', marginTop: '0.5rem' }}>
-                            <a href="#" style={{ fontSize: '0.85rem', color: '#F48646', textDecoration: 'none' }}>
+                            <a href="#" style={{ fontSize: '0.85rem', color: 'var(--color-primary)', textDecoration: 'none' }}>
                                 ¿Olvidaste tu contraseña?
                             </a>
                         </div>

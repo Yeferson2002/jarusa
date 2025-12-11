@@ -116,7 +116,7 @@ const Login = () => {
                                     outline: 'none',
                                     transition: 'border-color 0.2s'
                                 }}
-                                onFocus={(e) => e.target.style.borderColor = '#F48646'}
+                                onFocus={(e) => e.target.style.borderColor = 'var(--color-primary)'}
                                 onBlur={(e) => e.target.style.borderColor = '#ddd'}
                                 required
                             />
@@ -143,7 +143,7 @@ const Login = () => {
                                     outline: 'none',
                                     transition: 'border-color 0.2s'
                                 }}
-                                onFocus={(e) => e.target.style.borderColor = '#F48646'}
+                                onFocus={(e) => e.target.style.borderColor = 'var(--color-primary)'}
                                 onBlur={(e) => e.target.style.borderColor = '#ddd'}
                                 required
                             />
@@ -168,7 +168,7 @@ const Login = () => {
                             </button>
                         </div>
                         <div style={{ textAlign: 'right', marginTop: '0.5rem' }}>
-                            <a href="#" style={{ fontSize: '0.85rem', color: '#F48646', textDecoration: 'none' }}>
+                            <a href="#" style={{ fontSize: '0.85rem', color: 'var(--color-primary)', textDecoration: 'none' }}>
                                 ¿Olvidaste tu contraseña?
                             </a>
                         </div>
@@ -177,7 +177,7 @@ const Login = () => {
                     <button
                         type="submit"
                         style={{
-                            backgroundColor: '#F48646',
+                            backgroundColor: 'var(--color-primary)',
                             color: 'white',
                             padding: '1rem',
                             borderRadius: '50px',
@@ -192,8 +192,8 @@ const Login = () => {
                             marginTop: '0.5rem',
                             transition: 'background-color 0.2s'
                         }}
-                        onMouseOver={(e) => e.target.style.backgroundColor = '#e07535'}
-                        onMouseOut={(e) => e.target.style.backgroundColor = '#F48646'}
+                        onMouseOver={(e) => e.target.style.backgroundColor = 'var(--color-primary-hover)'}
+                        onMouseOut={(e) => e.target.style.backgroundColor = 'var(--color-primary)'}
                     >
                         Continuar <ArrowRight size={20} />
                     </button>
@@ -202,7 +202,7 @@ const Login = () => {
                 <div style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid #eee' }}>
                     <p style={{ fontSize: '0.9rem', color: '#666' }}>
                         ¿Aún no tienes cuenta?{' '}
-                        <Link to="/register" style={{ color: '#F48646', fontWeight: 'bold', textDecoration: 'none' }}>
+                        <Link to="/register" style={{ color: 'var(--color-primary)', fontWeight: 'bold', textDecoration: 'none' }}>
                             Regístrate aquí
                         </Link>
                     </p>

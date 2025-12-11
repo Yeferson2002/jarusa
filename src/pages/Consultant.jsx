@@ -74,14 +74,14 @@ const Consultant = () => {
                     </p>
                     <button style={{
                         padding: '1rem 2.5rem',
-                        backgroundColor: '#F48646',
+                        backgroundColor: 'var(--color-primary)',
                         color: 'white',
                         border: 'none',
                         borderRadius: '30px',
                         fontSize: '1.1rem',
                         fontWeight: 'bold',
                         cursor: 'pointer',
-                        boxShadow: '0 4px 15px rgba(244, 134, 70, 0.4)'
+                        boxShadow: '0 4px 15px rgba(213, 0, 109, 0.4)'
                     }} onClick={() => document.getElementById('register-form').scrollIntoView({ behavior: 'smooth' })}>
                         ¡Quiero inscribirme!
                     </button>
@@ -119,13 +119,13 @@ const Consultant = () => {
                                 <div style={{
                                     width: '60px',
                                     height: '60px',
-                                    backgroundColor: '#fff0e6',
+                                    backgroundColor: 'var(--color-secondary)',
                                     borderRadius: '50%',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     margin: '0 auto 1.5rem',
-                                    color: '#F48646'
+                                    color: 'var(--color-primary)'
                                 }}>
                                     <CheckCircle size={32} />
                                 </div>
@@ -218,7 +218,7 @@ const Consultant = () => {
                                 <button type="submit" disabled={loading} style={{
                                     width: '100%',
                                     padding: '1rem',
-                                    backgroundColor: loading ? '#ccc' : '#F48646',
+                                    backgroundColor: loading ? '#ccc' : 'var(--color-primary)',
                                     color: 'white',
                                     border: 'none',
                                     borderRadius: '50px',

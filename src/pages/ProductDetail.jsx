@@ -143,7 +143,7 @@ const ProductDetail = () => {
                                         backgroundColor: '#f9f9f9',
                                         borderRadius: '8px',
                                         cursor: 'pointer',
-                                        border: selectedImage === index ? '2px solid #F48646' : '2px solid transparent',
+                                        border: selectedImage === index ? '2px solid var(--color-primary)' : '2px solid transparent',
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
@@ -189,7 +189,7 @@ const ProductDetail = () => {
                     <button
                         onClick={handleAddToCart}
                         style={{
-                            backgroundColor: '#F48646',
+                            backgroundColor: 'var(--color-primary)',
                             color: 'white',
                             border: 'none',
                             padding: '1rem 3rem',
@@ -200,7 +200,7 @@ const ProductDetail = () => {
                             width: '100%',
                             maxWidth: '300px',
                             marginBottom: '2rem',
-                            boxShadow: '0 4px 12px rgba(244, 134, 70, 0.3)'
+                            boxShadow: '0 4px 12px rgba(213, 0, 109, 0.3)'
                         }}
                     >
                         Agregar al carrito
