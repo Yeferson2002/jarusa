@@ -92,7 +92,7 @@ const Consultant = () => {
             <section style={{ padding: '5rem 0', backgroundColor: '#f9f9f9' }}>
                 <div className="container">
                     <h2 style={{ textAlign: 'center', fontSize: '2.5rem', fontFamily: 'serif', marginBottom: '3rem', color: '#333' }}>
-                        ¿Por qué ser Consultora Natura?
+                        ¿Por qué ser Consultora Jarusa?
                     </h2>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
                         {[

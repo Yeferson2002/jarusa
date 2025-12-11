@@ -75,7 +75,7 @@ const AdminConsultants = () => {
 
     const handleView = async (id) => {
         try {
-            const response = await fetch(`https://natura-jl7g.onrender.com/api/users/${id}`);
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/users/${id}`);
             const data = await response.json();
             if (response.ok) {
                 setSelectedConsultant(data);

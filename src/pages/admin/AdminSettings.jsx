@@ -5,7 +5,7 @@ const AdminSettings = () => {
     const [profileData, setProfileData] = useState({
         firstName: 'Admin',
         lastName: 'User',
-        email: 'admin@natura.com.pe',
+        email: 'admin@jarusa.com.pe',
         role: 'Administrador General'
     });
 

@@ -37,7 +37,7 @@ const ConsultantLayout = () => {
             <aside className={`admin-sidebar ${isSidebarOpen ? 'open' : ''}`}>
                 <div style={{ padding: '2rem', borderBottom: '1px solid #f0f0f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div style={{ fontSize: '1.5rem', fontFamily: 'serif', color: '#333' }}>
-                        natura <span style={{ fontSize: '0.8rem', color: '#F48646', fontFamily: 'sans-serif', fontWeight: 'bold' }}>CONSULTORA</span>
+                        jarusa <span style={{ fontSize: '0.8rem', color: '#F48646', fontFamily: 'sans-serif', fontWeight: 'bold' }}>CONSULTORA</span>
                     </div>
                     <button
                         onClick={closeSidebar}

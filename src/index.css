@@ -1,12 +1,12 @@
 :root {
-  /* Natura &Co Palette */
-  --color-primary: #FF671F;
-  /* Natura Orange */
-  --color-primary-hover: #E55A1B;
-  --color-secondary: #F4F0E6;
-  /* Light Beige/Earth */
-  --color-accent: #78A02E;
-  /* Ekos Green */
+  /* Jarusa Cosméticos Palette */
+  --color-primary: #ff81ca;
+  /* Jarusa Pink - Lighter */
+  --color-primary-hover: #d66caf;
+  --color-secondary: #ffe6f4;
+  /* Light Pink */
+  --color-accent: #000000;
+  /* Black Accent */
 
   --color-text-main: #333333;
   --color-text-light: #666666;

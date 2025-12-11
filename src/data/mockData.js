@@ -4,7 +4,7 @@ export const clients = [
         name: "Ana García",
         avatar: "https://i.pravatar.cc/150?u=1",
         lastPurchase: "Hace 15 días",
-        history: ["Labial Avon Power Stay", "Esmalte Natura Una"],
+        history: ["Labial Avon Power Stay", "Esmalte Jarusa Una"],
         profile: "Amante del maquillaje, prefiere tonos rojos y vibrantes. Vive en zona húmeda.",
         potential: "Alto"
     },
@@ -14,7 +14,7 @@ export const clients = [
         avatar: "https://i.pravatar.cc/150?u=2",
         lastPurchase: "Hace 45 días",
         history: ["Crema Tododia", "Jabón Ekos"],
-        profile: "Enfocada en cuidado corporal y sustentabilidad. Cliente fiel de Natura.",
+        profile: "Enfocada en cuidado corporal y sustentabilidad. Cliente fiel de Jarusa.",
         potential: "Medio"
     },
     {
@@ -31,7 +31,7 @@ export const clients = [
 export const products = [
     {
         id: 'p1',
-        brand: 'Natura',
+        brand: 'Jarusa',
         line: 'Chronos',
         name: 'Protector Antiseñales FPS 50',
         price: 85.00,
@@ -49,7 +49,7 @@ export const products = [
     },
     {
         id: 'p3',
-        brand: 'Natura',
+        brand: 'Jarusa',
         line: 'Ekos',
         name: 'Frescor de Maracuyá',
         price: 75.00,

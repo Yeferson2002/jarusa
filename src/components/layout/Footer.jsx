@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="container">
                 <div className="footer-content">
                     <div className="footer-column">
-                        <h3>Sobre Natura</h3>
+                        <h3>Sobre Jarusa</h3>
                         <ul>
                             <li><a href="#">Nuestra Historia</a></li>
                             <li><a href="#">Sustentabilidad</a></li>
@@ -44,7 +44,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="footer-bottom">
-                    <p>&copy; 2024 Natura Cosméticos S.A. Todos los derechos reservados.</p>
+                    <p>&copy; 2024 Jarusa Cosméticos S.A. Todos los derechos reservados.</p>
                 </div>
             </div>
         </footer>

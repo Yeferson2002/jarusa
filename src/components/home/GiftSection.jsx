@@ -61,7 +61,7 @@ const GiftSection = () => {
 
     return (
         <section className="gift-section container">
-            <h2 className="section-title">tu regalo perfecto en natura</h2>
+            <h2 className="section-title">tu regalo perfecto en jarusa</h2>
 
             <div className="carousel-container">
                 <button className="carousel-btn prev" onClick={() => scroll('left')}>

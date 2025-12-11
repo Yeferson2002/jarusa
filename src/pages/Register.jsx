@@ -72,7 +72,7 @@ const Register = () => {
             }}>
                 <Link to="/" style={{ textDecoration: 'none' }}>
                     <div style={{ fontSize: '1.8rem', fontWeight: '400', color: 'var(--color-text-main)', letterSpacing: '-0.5px', fontFamily: 'serif' }}>
-                        natura
+                        Jarusa
                     </div>
                 </Link>
             </div>

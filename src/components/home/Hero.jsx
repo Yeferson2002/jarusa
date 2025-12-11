@@ -18,7 +18,7 @@ const Hero = () => {
                     {/* Left Content */}
                     <div className="hero-content-left">
                         <h2 className="hero-main-title">
-                            Navidad<br />Natura
+                            Navidad<br />Jarusa
                         </h2>
 
                         <div style={{ marginTop: '3rem' }}>

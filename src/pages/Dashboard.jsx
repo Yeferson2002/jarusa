@@ -77,7 +77,7 @@ const Dashboard = () => {
                     <div style={{ marginBottom: '1rem', padding: '0.5rem', backgroundColor: 'rgba(120, 160, 46, 0.1)', borderRadius: '8px', width: 'fit-content' }}>
                         <BookOpen size={24} color="var(--color-accent)" />
                     </div>
-                    <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Academia Natura</h3>
+                    <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Academia Jarusa</h3>
                     <p style={{ color: 'var(--color-text-light)', marginBottom: '1.5rem', fontSize: '0.875rem' }}>
                         Aprende sobre los nuevos lanzamientos de Chronos y Ekos.
                     </p>

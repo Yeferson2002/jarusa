@@ -287,7 +287,7 @@ const AddProductModal = ({ isOpen, onClose, onProductAdded, productToEdit }) => 
                                 onChange={handleChange}
                                 required
                                 style={{ width: '100%', padding: '0.75rem', borderRadius: '8px', border: '1px solid #d1d5db', outline: 'none' }}
-                                placeholder="Ej. Natura"
+                                placeholder="Ej. Jarusa"
                             />
                         </div>
 

@@ -15,7 +15,7 @@ const Layout = () => {
             {/* Footer Simple */}
             <footer style={{ backgroundColor: '#333', color: 'white', padding: '2rem 0', marginTop: 'auto' }}>
                 <div className="container" style={{ textAlign: 'center', fontSize: '0.875rem' }}>
-                    <p>© 2024 Natura &Co. Plataforma ABA (Prototipo MVP).</p>
+                    <p>© 2024 Jarusa &Co. Plataforma ABA (Prototipo MVP).</p>
                 </div>
             </footer>
         </div>
