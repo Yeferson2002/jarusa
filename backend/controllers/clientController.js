@@ -21,7 +21,7 @@ const getClients = asyncHandler(async (req, res) => {
         console.error('Error writing to log file:', err);
     }
 
-    console.log('User requesting clients:', userId, role);
+    console.log(`[DEBUG] GetClients - UserID: ${userId}, Role: ${role}`);
 
     // If user is NOT admin, filter by ConsultantId
     // This ensures consultants (and potentially others) only see their own clients
