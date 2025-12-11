@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Search, Eye, Filter, ShoppingBag, Calendar, DollarSign, User } from 'lucide-react';
 import OrderDetailsModal from '../../components/admin/OrderDetailsModal';
 
 const AdminOrders = () => {
+    const navigate = useNavigate();
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
     const [selectedOrder, setSelectedOrder] = useState(null);
@@ -12,13 +14,33 @@ const AdminOrders = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+                const userInfoString = localStorage.getItem('userInfo');
+                if (!userInfoString) {
+                    console.warn('No userInfo found in localStorage');
+                    navigate('/professional-login');
+                    return;
+                }
+                const userInfo = JSON.parse(userInfoString);
+
+                if (!userInfo || !userInfo.token) {
+                     console.warn('Invalid user info or no token');
+                     navigate('/professional-login');
+                     return;
+                }
+
                 const config = {
                     headers: {
                         Authorization: `Bearer ${userInfo.token}`,
                     },
                 };
                 const response = await fetch(`${import.meta.env.VITE_API_URL}/api/orders`, config);
+                
+                if (response.status === 401) {
+                    localStorage.removeItem('userInfo');
+                    navigate('/professional-login');
+                    return;
+                }
+
                 const data = await response.json();
 
                 const transformedOrders = data.map(order => ({

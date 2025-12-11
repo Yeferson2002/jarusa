@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Search, Filter, User, Edit, Save, X } from 'lucide-react';
 
 const AdminClients = () => {
+    const navigate = useNavigate();
     const [clients, setClients] = useState([]);
     const [consultants, setConsultants] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -17,13 +19,34 @@ const AdminClients = () => {
 
     const fetchClients = async () => {
         try {
-            const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+            const userInfoString = localStorage.getItem('userInfo');
+            if (!userInfoString) {
+                console.warn('No userInfo found in localStorage');
+                navigate('/professional-login');
+                return;
+            }
+            const userInfo = JSON.parse(userInfoString);
+
+            if (!userInfo || !userInfo.token) {
+                console.warn('Invalid user info or no token');
+                navigate('/professional-login');
+                return;
+            }
+
             const config = {
                 headers: {
                     Authorization: `Bearer ${userInfo.token}`,
                 },
             };
             const response = await fetch(`${import.meta.env.VITE_API_URL}/api/clients`, config);
+
+            if (response.status === 401) {
+                // Token expired or invalid
+                localStorage.removeItem('userInfo');
+                navigate('/professional-login');
+                return;
+            }
+
             const data = await response.json();
             setClients(data);
         } catch (error) {
@@ -35,7 +58,10 @@ const AdminClients = () => {
 
     const fetchConsultants = async () => {
         try {
-            const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+            const userInfoString = localStorage.getItem('userInfo');
+            if (!userInfoString) return; // Silent return or handle same as above
+            const userInfo = JSON.parse(userInfoString);
+
             const config = {
                 headers: {
                     Authorization: `Bearer ${userInfo.token}`,
