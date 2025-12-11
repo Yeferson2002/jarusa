@@ -39,7 +39,8 @@ const LoginProfessional = () => {
             }
         } catch (error) {
             console.error('Error:', error);
-            alert("Error al conectar con el servidor");
+            // DEBUG: Show exact error to user
+            alert(`Error de Conexión: ${error.message}. \nIntentando acceder a: ${import.meta.env.VITE_API_URL}/api/auth/login`);
         }
     };
 
