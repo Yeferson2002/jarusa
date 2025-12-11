@@ -121,16 +121,21 @@ const getOrders = asyncHandler(async (req, res) => {
 // @route   GET /api/orders/client/:id
 // @access  Private/Consultant/Admin
 const getOrdersByClient = asyncHandler(async (req, res) => {
+    console.log(`[DEBUG] getOrdersByClient Called with ID: ${req.params.id}`);
+
+    // First, verify if any orders exist purely by ClientId
+    const rawCount = await Order.count({ where: { ClientId: req.params.id } });
+    console.log(`[DEBUG] Raw count of orders for ClientId ${req.params.id}: ${rawCount}`);
+
+    // Also check if there are any orders for this client but associated with UserId (legacy check)
+    // Assuming Client ID maps to User ID roughly or checking for orphaned records
+
     const orders = await Order.findAll({
         where: { ClientId: req.params.id },
-        include: [
-            {
-                model: OrderItem,
-                as: 'OrderItems'
-            }
-        ],
+        include: [OrderItem],
         order: [['createdAt', 'DESC']]
     });
+    console.log(`[DEBUG] Orders found with include: ${orders.length}`);
     res.json(orders);
 });
 
