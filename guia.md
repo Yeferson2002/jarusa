@@ -28,10 +28,11 @@ Para que la aplicación funcione, primero necesitamos desplegar el servidor.
     | `DB_USER` | `2v2MvEpU6CPHHGH.root` |
     | `DB_PASSWORD` | `lrMg7m6ABD0cekrU` |
     | `DB_NAME` | `test` |
-    | `JWT_SECRET` | *(Inventa una clave segura, ej: jarusa_secret_123)* |
+    | `JWT_SECRET` | *(Inventa una clave segura)* |
 
-5.  Haz clic en **"Create Web Service"** y espera a que el despliegue finalice.
-6.  **Copia la URL** que te da Render (ej: `https://jarusa-backend.onrender.com`).
+5.  Haz clic en **"Create Web Service"**.
+6.  **IMPORTANTE:** Una vez creado, ve a **Settings** y asegúrate de que el **Name** sea `jarusa` (o lo más parecido posible).
+7.  **Copia la URL final** que te da Render (ej: `https://jarusa.onrender.com` o `https://jarusa-xyz.onrender.com`).
 
 ---
 
@@ -49,7 +50,7 @@ Una vez que el backend está listo, desplegamos la web.
 
     | Name | Value |
     | :--- | :--- |
-    | `VITE_API_URL` | `https://jarusa.onrender.com` |
+    | `VITE_API_URL` | `https://natura-jl7g.onrender.com` |
 
 5.  Haz clic en **"Deploy"**.
 

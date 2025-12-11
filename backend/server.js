@@ -179,6 +179,10 @@ User.hasMany(Recommendation, { foreignKey: 'ConsultantId' });
 Recommendation.belongsTo(Product);
 Product.hasMany(Recommendation);
 
+// Error Handling Middleware (MUST be last)
+const { errorHandler } = require('./middleware/errorMiddleware');
+app.use(errorHandler);
+
 // Sync Database
 sequelize.sync().then(() => {
     console.log('Database & tables synced!');
