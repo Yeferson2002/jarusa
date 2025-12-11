@@ -23,6 +23,8 @@ const sequelize = new Sequelize(
 
 const connectDB = async () => {
     try {
+        console.log(`Attempting to connect to DB at ${process.env.DB_HOST} with user ${process.env.DB_USER ? process.env.DB_USER.substring(0, 5) + '...' : 'UNDEFINED'}`);
+        console.log(`Debug: DB_HOST=${process.env.DB_HOST}, DB_USER=${process.env.DB_USER}`);
         await sequelize.authenticate();
         console.log('MySQL Connected via Sequelize');
     } catch (error) {
