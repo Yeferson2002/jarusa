@@ -324,92 +324,91 @@ const ProductCard = ({ id, name, price, image, reason, clientId }) => {
     const handleRecommend = async () => {
         setLoading(true);
         try {
-            try {
-                const userInfoString = localStorage.getItem('userInfo');
-                if (!userInfoString) return;
-                const userInfo = JSON.parse(userInfoString);
-                const config = {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        Authorization: `Bearer ${userInfo.token}`,
-                    },
-                    body: JSON.stringify({
-                        clientId: clientId,
-                        productId: id,
-                        reason: reason
-                    }),
-                };
+            const userInfoString = localStorage.getItem('userInfo');
+            if (!userInfoString) return;
+            const userInfo = JSON.parse(userInfoString);
+            const config = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${userInfo.token}`,
+                },
+                body: JSON.stringify({
+                    clientId: clientId,
+                    productId: id,
+                    reason: reason
+                }),
+            };
 
-                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/recommendations`, config);
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/recommendations`, config);
 
-                if (response.ok) {
-                    setRecommended(true);
-                } else {
-                    console.error('Failed to send recommendation');
-                }
-            } catch (error) {
-                console.error('Error recommending:', error);
-            } finally {
-                setLoading(false);
+            if (response.ok) {
+                setRecommended(true);
+            } else {
+                console.error('Failed to send recommendation');
             }
-        };
-
-        return (
-            <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.75rem',
-                backgroundColor: 'white',
-                padding: '0.5rem',
-                borderRadius: '8px',
-                border: '1px solid #e5e7eb',
-                margin: '0.5rem 0',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
-            }}>
-                <img
-                    src={image}
-                    alt={name}
-                    style={{ width: '40px', height: '40px', borderRadius: '6px', objectFit: 'cover' }}
-                    onError={(e) => { e.target.src = 'https://via.placeholder.com/40'; }}
-                />
-                <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: '0.85rem', fontWeight: '600', color: '#374151' }}>{name}</div>
-                    <div style={{ fontSize: '0.8rem', color: 'var(--color-primary)', fontWeight: '500' }}>S/ {price}</div>
-                    {reason && <div style={{ fontSize: '0.7rem', color: '#6b7280', marginTop: '0.2rem', fontStyle: 'italic' }}>"{reason}"</div>}
-                </div>
-                <button
-                    onClick={handleRecommend}
-                    disabled={recommended || loading}
-                    style={{
-                        border: 'none',
-                        background: recommended ? '#dcfce7' : '#f3f4f6',
-                        color: recommended ? '#166534' : '#4b5563',
-                        padding: '0.4rem',
-                        borderRadius: '6px',
-                        cursor: recommended ? 'default' : 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.25rem',
-                        fontSize: '0.75rem',
-                        fontWeight: '600',
-                        transition: 'all 0.2s'
-                    }}
-                >
-                    {recommended ? (
-                        <>
-                            <Check size={14} />
-                            Enviado
-                        </>
-                    ) : (
-                        <>
-                            <ThumbsUp size={14} />
-                            Recomendar
-                        </>
-                    )}
-                </button>
-            </div>
-        );
+        } catch (error) {
+            console.error('Error recommending:', error);
+        } finally {
+            setLoading(false);
+        }
     };
 
-    export default AIChatModal;
+    return (
+        <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.75rem',
+            backgroundColor: 'white',
+            padding: '0.5rem',
+            borderRadius: '8px',
+            border: '1px solid #e5e7eb',
+            margin: '0.5rem 0',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
+        }}>
+            <img
+                src={image}
+                alt={name}
+                style={{ width: '40px', height: '40px', borderRadius: '6px', objectFit: 'cover' }}
+                onError={(e) => { e.target.src = 'https://via.placeholder.com/40'; }}
+            />
+            <div style={{ flex: 1 }}>
+                <div style={{ fontSize: '0.85rem', fontWeight: '600', color: '#374151' }}>{name}</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--color-primary)', fontWeight: '500' }}>S/ {price}</div>
+                {reason && <div style={{ fontSize: '0.7rem', color: '#6b7280', marginTop: '0.2rem', fontStyle: 'italic' }}>"{reason}"</div>}
+            </div>
+            <button
+                onClick={handleRecommend}
+                disabled={recommended || loading}
+                style={{
+                    border: 'none',
+                    background: recommended ? '#dcfce7' : '#f3f4f6',
+                    color: recommended ? '#166534' : '#4b5563',
+                    padding: '0.4rem',
+                    borderRadius: '6px',
+                    cursor: recommended ? 'default' : 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.25rem',
+                    fontSize: '0.75rem',
+                    fontWeight: '600',
+                    transition: 'all 0.2s'
+                }}
+            >
+                {recommended ? (
+                    <>
+                        <Check size={14} />
+                        Enviado
+                    </>
+                ) : (
+                    <>
+                        <ThumbsUp size={14} />
+                        Recomendar
+                    </>
+                )}
+            </button>
+        </div>
+    );
+};
+
+export default AIChatModal;
