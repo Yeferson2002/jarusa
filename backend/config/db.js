@@ -4,12 +4,12 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const sequelize = new Sequelize(
-    process.env.DB_NAME || 'aba_platform',
-    process.env.DB_USER || 'root',
-    process.env.DB_PASSWORD || process.env.DB_PASS || '',
+    process.env.DB_NAME || process.env.DATABASE || 'aba_platform',
+    process.env.DB_USER || process.env.USERNAME || 'root',
+    process.env.DB_PASSWORD || process.env.PASSWORD || process.env.DB_PASS || '',
     {
-        host: process.env.DB_HOST || 'localhost',
-        port: process.env.DB_PORT || 3306,
+        host: process.env.DB_HOST || process.env.HOST || 'localhost',
+        port: process.env.DB_PORT || process.env.PORT || 3306,
         dialect: 'mysql',
         dialectOptions: {
             ssl: {
@@ -23,8 +23,7 @@ const sequelize = new Sequelize(
 
 const connectDB = async () => {
     try {
-        console.log(`Attempting to connect to DB at ${process.env.DB_HOST} with user ${process.env.DB_USER ? process.env.DB_USER.substring(0, 5) + '...' : 'UNDEFINED'}`);
-        console.log(`Debug: DB_HOST=${process.env.DB_HOST}, DB_USER=${process.env.DB_USER}`);
+        console.log(`Debug: DB_HOST=${process.env.DB_HOST || process.env.HOST}, DB_USER=${process.env.DB_USER || process.env.USERNAME}`);
         await sequelize.authenticate();
         console.log('MySQL Connected via Sequelize');
     } catch (error) {
