@@ -14,7 +14,7 @@ const ConsultantCatalog = () => {
     const fetchRecommendations = async () => {
         try {
             const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
-            const response = await fetch('https://natura-jl7g.onrender.com/api/recommendations/consultant', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/recommendations/consultant`, {
                 headers: {
                     Authorization: `Bearer ${userInfo.token}`,
                 },

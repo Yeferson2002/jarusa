@@ -18,7 +18,7 @@ const ConsultantDashboard = () => {
                     setUser(storedUser);
 
                     // Fetch orders
-                    const response = await fetch('https://natura-jl7g.onrender.com/api/orders/myorders', {
+                    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/orders/myorders`, {
                         headers: {
                             Authorization: `Bearer ${storedUser.token}`,
                         },

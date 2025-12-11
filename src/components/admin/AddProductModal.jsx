@@ -28,7 +28,7 @@ const AddProductModal = ({ isOpen, onClose, onProductAdded, productToEdit }) => 
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await fetch('https://natura-jl7g.onrender.com/api/categories');
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/categories`);
                 const data = await response.json();
                 setCategories(data);
             } catch (error) {

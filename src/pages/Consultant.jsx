@@ -25,7 +25,7 @@ const Consultant = () => {
         setMessage(null);
 
         try {
-            const response = await fetch('https://natura-jl7g.onrender.com/api/users/consultants', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/users/consultants`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

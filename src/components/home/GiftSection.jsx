@@ -14,7 +14,7 @@ const GiftSection = () => {
     React.useEffect(() => {
         const fetchGifts = async () => {
             try {
-                const response = await fetch('https://natura-jl7g.onrender.com/api/products');
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products`);
                 const data = await response.json();
 
                 // Filter for gifts if needed, or just use all products for now
