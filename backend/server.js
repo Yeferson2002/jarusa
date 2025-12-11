@@ -16,33 +16,42 @@ dotenv.config();
 connectDB();
 
 const app = express();
-
-// Middleware
-app.use(express.json());
-const corsOptions = {
-    origin: ['http://localhost:5173', 'http://localhost:3000', 'https://jarusa.vercel.app'],
-    optionsSuccessStatus: 200,
-    credentials: true
+// Middleware and Configs
+const logger = (req, res, next) => {
+    console.log(`[REQUEST] ${req.method} ${req.url}`);
+    next();
 };
-app.use(cors(corsOptions));
 
-// Make uploads folder static
-app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
+app.use(logger);
 
-// Routes
-app.get('/', (req, res) => {
-    res.send('API is running...');
+// DEBUG ENDPOINT
+app.get('/api/debug-status', async (req, res) => {
+    try {
+        const { sequelize } = require('./config/db');
+        const User = require('./models/User');
+        const Client = require('./models/Client');
+        const { Order } = require('./models/Order');
+
+        const userCount = await User.count();
+        const clientCount = await Client.count();
+        const orderCount = await Order.count();
+
+        res.json({
+            database_name: sequelize.config.database,
+            counts: {
+                users: userCount,
+                clients: clientCount,
+                orders: orderCount
+            },
+            env_vars: {
+                DB_NAME: process.env.DB_NAME ? 'Set' : 'Unset',
+                DATABASE: process.env.DATABASE ? process.env.DATABASE : 'Unset'
+            }
+        });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 });
-
-// Define Routes
-app.use('/api/auth', require('./routes/authRoutes'));
-app.use('/api/products', require('./routes/productRoutes'));
-app.use('/api/users', require('./routes/userRoutes'));
-app.use('/api/orders', require('./routes/orderRoutes'));
-app.use('/api/categories', require('./routes/categoryRoutes'));
-app.use('/api/clients', require('./routes/clientRoutes'));
-app.use('/api/ai', require('./routes/aiRoutes'));
-const Category = require('./models/Category'); // Import Category model
 
 // ... (rutas existentes)
 app.use('/api/recommendations', require('./routes/recommendationRoutes'));
