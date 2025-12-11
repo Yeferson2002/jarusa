@@ -49,7 +49,7 @@ Una vez que el backend está listo, desplegamos la web.
 
     | Name | Value |
     | :--- | :--- |
-    | `VITE_API_URL` | *(Pega aquí la URL de tu backend de Render)* |
+    | `VITE_API_URL` | `https://jarusa.onrender.com` |
 
 5.  Haz clic en **"Deploy"**.
 
