@@ -179,7 +179,9 @@ const AddProductModal = ({ isOpen, onClose, onProductAdded, productToEdit }) => 
                 headers['Content-Type'] = 'application/json';
             }
 
-            const url = productToEdit ? `/api/products/${productToEdit.id}` : '/api/products';
+            const url = productToEdit
+                ? `${import.meta.env.VITE_API_URL}/api/products/${productToEdit.id}`
+                : `${import.meta.env.VITE_API_URL}/api/products`;
             const method = productToEdit ? 'PUT' : 'POST';
 
             const token = localStorage.getItem('token');
