@@ -182,6 +182,11 @@ const AddProductModal = ({ isOpen, onClose, onProductAdded, productToEdit }) => 
             const url = productToEdit ? `/api/products/${productToEdit.id}` : '/api/products';
             const method = productToEdit ? 'PUT' : 'POST';
 
+            const token = localStorage.getItem('token');
+            if (token) {
+                headers['Authorization'] = `Bearer ${token}`;
+            }
+
             const response = await fetch(url, {
                 method: method,
                 headers: headers,
