@@ -214,12 +214,20 @@ const AddProductModal = ({ isOpen, onClose, onProductAdded, productToEdit }) => 
                     setPreviewUrls(['', '', '']);
                 }, 1500);
             } else {
-                const errorData = await response.json();
-                alert(`Error al ${productToEdit ? 'actualizar' : 'crear'} producto: ` + (errorData.message || 'Error desconocido'));
+                // Try to parse JSON error, if fails, read text
+                const contentType = response.headers.get("content-type");
+                if (contentType && contentType.indexOf("application/json") !== -1) {
+                    const errorData = await response.json();
+                    alert(`Error al ${productToEdit ? 'actualizar' : 'crear'} producto: ` + (errorData.message || 'Error desconocido'));
+                } else {
+                    const text = await response.text();
+                    console.error('Non-JSON response:', text);
+                    alert(`Error del servidor (${response.status}): Es posible que el servidor esté reiniciándose o haya un error interno.`);
+                }
             }
         } catch (error) {
             console.error(`Error ${productToEdit ? 'updating' : 'creating'} product:`, error);
-            alert('Error de conexión');
+            alert('Error de conexión: No se pudo contactar con el servidor. Verifica tu internet o intenta más tarde.');
         } finally {
             setLoading(false);
         }
